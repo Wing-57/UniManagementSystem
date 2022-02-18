@@ -32,6 +32,7 @@ def getCommandNames():
 def open_menu():
     options.output(table=getCommandNames(), title="Menu", borders=True)
     command_number = int(input("Enter command number: "))
+    print("")  # Gap between input and output
     COMMANDS_MAP[command_number]["module"].execute()
     open_menu()
 

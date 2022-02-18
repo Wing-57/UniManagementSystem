@@ -1,1 +1,1 @@
-{"Student3": {"Matric": "342", "FSC": "234", "ECAT": "542", "Preferences": ["CS", "EE", "CE"]}}
+{"Student3": {"Matric": "342", "FSC": "234", "ECAT": "542", "Preferences": ["CS", "EE", "CE"]}, "TestStudent": {"Matric": "324", "FSC": "532", "ECAT": "543", "Preferences": ["EE", "CS", "CE"]}, "Rafia Azhar": {"Matric": "324", "FSC": "654", "ECAT": "966", "Preferences": ["CS", "CE", "EE"]}, "AnotherOne": {"Matric": "425", "FSC": "634", "ECAT": "723", "Preferences": ["EE", "CS", "CE"]}, "Coca Cola": {"Matric": "435", "FSC": "123", "ECAT": "643", "Preferences": ["EE", "CE", "CS"]}}

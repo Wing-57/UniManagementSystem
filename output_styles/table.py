@@ -4,7 +4,7 @@ def print_field_names(names):
     end_formatting_string = ""
     for name in names:
         # aligns to the left and sets width of 10
-        end_formatting_string += "{:<10s}"
+        end_formatting_string += "{:<15s}"
 
     # '*' operator unpacks a tuple, putting each string as a seperate argument to the format function
     print(end_formatting_string.format(*names))
@@ -16,7 +16,7 @@ def print_list(list):
     for item in list:
         end_formatting_string = ""
         for values in item:
-            end_formatting_string += "{:<10}".format(str(values))
+            end_formatting_string += "{:<15}".format(str(values))
         print(end_formatting_string)
 
 
