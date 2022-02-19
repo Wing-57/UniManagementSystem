@@ -1,6 +1,8 @@
+from enums import rank
+
 
 def model():
     return {
         "password": str,
-        "rank": "ADMIN" | "STUDENT"
+        "rank": rank.Rank
     }

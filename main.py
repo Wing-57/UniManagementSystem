@@ -1,7 +1,7 @@
 import json
 from logic import login
 from output_styles import options
-from commands import add_student, print_record_in_merit_order, view_all_students, seat_management
+from commands import add_student, print_record_in_merit_order, view_all_students, seat_management, create_user
 
 CREDENTIALS = json.load(open("./data/credentials.json"))
 COMMANDS_MAP = [
@@ -20,6 +20,10 @@ COMMANDS_MAP = [
     {
         "name": "Seat Management",
         "module": seat_management
+    },
+    {
+        "name": "Create User",
+        "module": create_user
     }
 ]
 
