@@ -1,12 +1,11 @@
 import json
 from output_styles import table
-
-students = json.load(open("./data/students.json")) or {}
+from models import students as students_
 
 # This function will create a new students table which will remove headers, such as: ECAT, Preferences etc.
 
 
-def sort_students():
+def sort_students(students):
     listed_students = []
 
     for student in students:  # variable `student` is the name of each student
@@ -21,10 +20,12 @@ def sort_students():
 
 
 def execute():
+    students = json.load(open("./data/students.json")) or {}
+
     if (len(students) == 0):
         # Checking if number of students is equal to 0
         print("There are no students currently indexed")
         return
 
-    table.output(sort_students(), [
-                 "Name", "Matric", "FSC", "ECAT", "Preferences"])
+    table.output(sort_students(students),
+                 ["Name"]+list(students_.model().keys()))

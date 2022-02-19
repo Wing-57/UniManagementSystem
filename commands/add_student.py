@@ -1,5 +1,6 @@
 import json
 from output_styles import options
+from models import students as students_
 
 PREFERENCES_OPTIONS = [
     {
@@ -57,9 +58,13 @@ def output_preferences():
 def execute():
     student_name = input("Student Name: ")
     settings = {}
-    settings["Matric"] = input("Matric: ")
-    settings["FSC"] = input("FSC: ")
-    settings["ECAT"] = input("ECAT: ")
+    students_model = students_.model()
+
+    for key in students_model:
+        if (key == "Preferences"):
+            continue
+        settings[key] = input(f"{key} ({type(students_model[key])}): ")
+
     settings["Preferences"] = output_preferences()
 
     insert_to_table(studentName=student_name, settings=settings)
