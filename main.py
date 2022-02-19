@@ -10,12 +10,12 @@ COMMANDS_MAP = [
         "module": add_student
     },
     {
-        "name": "Print Record In Merit Order",
-        "module": print_record_in_merit_order
-    },
-    {
         "name": "View All Students",
         "module": view_all_students
+    },
+    {
+        "name": "Print Record In Merit Order",
+        "module": print_record_in_merit_order
     }
 ]
 
@@ -29,14 +29,27 @@ def getCommandNames():
     return names
 
 
-def open_menu():
+def open_admin_menu():
     options.output(table=getCommandNames(), title="Menu", borders=True)
     command_number = int(input("Enter command number: "))
     print("")  # Gap between input and output
     COMMANDS_MAP[command_number]["module"].execute()
-    open_menu()
+    open_admin_menu()
+
+
+def open_student_menu():
+    print("Student menu yet to come")
+
+
+def start():
+    user_name = login.login(CREDENTIALS)
+    user_rank = CREDENTIALS[user_name]["rank"]
+
+    if (user_rank == "ADMIN"):
+        open_admin_menu()
+    elif (user_rank == "STUDENT"):
+        open_student_menu()
 
 
 if __name__ == "__main__":
-    login.login(CREDENTIALS)
-    open_menu()
+    start()
